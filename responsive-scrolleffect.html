@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .card-container {
+            position: relative;
+            padding: 20px;
+        }
+
+        .testimonial-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            height: auto;
+            margin-bottom: 40px;
+            border: 1px solid rgb(216, 216, 216);
+        }
+
+        .left-section1, .right-section1 {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .left-section1 {
+            padding: 30px 20px 50px 30px;
+        }
+
+        .left-section1 p {
+            color: #3A3A3A;
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6c3af0;
+        }
+
+        .card-btn {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .left-button, .right-button {
+            width: auto;
+        }
+
+        .reviews-link-1 {
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px;
+            width: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background: #6124D8;
+            color: #fff;
+        }
+
+        .reviews-link-2 {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px;
+            width: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            border: 1px solid #D0D5DD;
+            color: #6c3af0;
+        }
+
+        .right-section1 {
+            padding-left: 0;
+            background: #F2F4F7;
+            border-radius: 16px;
+        }
+
+        .rgt-imgsec img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Sticky Cards - Optional */
+        .card-1 { position: sticky; top: 130px; z-index: 1; }
+        .card-2 { position: sticky; top: 142px; z-index: 2; }
+        .card-3 { position: sticky; top: 154px; z-index: 3; }
+        .card-4 { position: sticky; top: 166px; z-index: 4; }
+        .card-5 { position: sticky; top: 178px; z-index: 5; }
+        .card-6 { position: sticky; top: 190px; z-index: 6; }
+        .card-7 { position: sticky; top: 202px; z-index: 7; }
+        .card-8 { position: sticky; top: 214px; z-index: 8; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-1, .card-2, .card-3, .card-4, .card-5, .card-6, .card-7, .card-8    { position: static; top: auto;}
+        
+        
+
+            .testimonial-container {
+                flex-direction: column;
+            }
+
+            .left-section1, .right-section1 {
+                width: 100%;
+                padding: 20px 0;
+            }
+
+            .card-btn {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .left-button, .right-button {
+                width: 100%;
+            }
+
+            .reviews-link-1, .reviews-link-2 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+
+    <!-- Card 1 -->
+    <div class="card-1 testimonial-container">
+        <div class="left-section1">
+            <div>
+                <div class="subtitle">CRM Software</div>
+                <div class="title">Stay organized & enhance customer relationships</div>
+                <p>Manage customer contacts, track interactions, and grow your business with ease. Stay ahead with a smarter CRM.</p>
+                <div class="card-btn">
+                    <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a></div>
+                    <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="right-section1">
+            <div class="rgt-imgsec">
+                <img src="https://leadheed.com/wp-content/uploads/2025/04/crmsoftware.webp" alt="CRM Software">
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-2 testimonial-container">
+        <div class="left-section1">
+            <div>
+                <div class="subtitle">Form Builder</div>
+                <div class="title">Drag, Drop, and Create – No Code Needed</div>
+                <p>Build stunning forms in minutes with our drag-and-drop editor. Collect leads, feedback, and data effortlessly.</p>
+                <div class="card-btn">
+                    <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a></div>
+                    <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="right-section1">
+            <div class="rgt-imgsec">
+                <img src="https://leadheed.com/wp-content/uploads/2025/04/formbuilder.webp" alt="Form Builder">
+            </div>
+        </div>
+    </div>
+
+<!-- Card 3 -->
+    <div class=" card-3 testimonial-container">
+        <!-- Left Section -->
+        <div class="left-section1">
+            <div>
+                
+                
+                <div class="subtitle">Communication Software</div>
+                <div class="title">Seamless Communication; Stronger Relationships</div>
+                    <p>Chat, call, and collaborate in one powerful platform. Keep your team and customers connected anytime, anywhere.</p>
+                    
+                    <div class="card-btn">
+                        <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a>
+                        </div>
+                    <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a>
+                    </div>
+                </div>
+                </div>
+                </div>
+            
+        
+
+        <!-- Right Section -->
+        <div class="right-section1">
+           <div class="rgt-imgsec">
+ <img src="https://leadheed.com/wp-content/uploads/2025/04/communicatonsoftware.webp" alt="stay-organized-and-enhance-customer-relationships"/>
+           </div>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+
+    <div class=" card-4 testimonial-container">
+        <!--Left Section -->
+       <div class="left-section1">
+           <div>
+               
+               
+               <div class="subtitle">Email Marketing Software</div>
+               <div class="title">Boost Conversions with Smart, Automated Emails
+</div>
+                   <p>Send personalized, high-impact emails that boost conversions. Automate campaigns, track results, and grow your customers.</p>
+                   
+                   <div class="card-btn">
+                       <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a>
+                       </div>
+                   <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a>
+                   </div>
+               </div>
+               </div>
+               </div>
+           
+       
+
+        <!--Right Section -->
+       <div class="right-section1">
+          <div class="rgt-imgsec">
+<img src="https://leadheed.com/wp-content/uploads/2025/04/emailmarketingsoftware.webp" alt="stay-organized-and-enhance-customer-relationships" />
+          </div>
+       </div>
+   </div>
+
+   <!-- Card 5 -->
+
+   <div class=" card-5 testimonial-container">
+    <!--Left Section -->
+   <div class="left-section1">
+       <div>
+           
+           
+           <div class="subtitle">Lead Generation Software</div>
+           <div class="title">Turn clicks into leads effortlessly</div>
+               <p>Find, capture, and convert leads faster with our easy-to-use software.</p>
+               
+               <div class="card-btn">
+                   <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a>
+                   </div>
+               <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a>
+               </div>
+           </div>
+           </div>
+           </div>
+       
+   
+
+    <!--Right Section -->
+   <div class="right-section1">
+      <div class="rgt-imgsec">
+<img src="https://leadheed.com/wp-content/uploads/2025/04/leadgenerationsoftware.webp" alt="stay-organized-and-enhance-customer-relationships" />
+      </div>
+   </div>
+</div>
+
+<!-- Card 6 -->
+<div class=" card-6 testimonial-container">
+    <!--Left Section -->
+   <div class="left-section1">
+       <div>
+           
+           
+           <div class="subtitle">Project Management Software</div>
+           <div class="title">Plan. Track. Deliver. All in one place</div>
+               <p>A complete project management solution to plan better, track progress, and deliver results on time.</p>
+               
+               <div class="card-btn">
+                   <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a>
+                   </div>
+               <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a>
+               </div>
+           </div>
+           </div>
+           </div>
+       
+   
+
+    <!--Right Section -->
+   <div class="right-section1">
+      <div class="rgt-imgsec">
+<img src="https://leadheed.com/wp-content/uploads/2025/04/projectmanagementsoftware.webp" alt="stay-organized-and-enhance-customer-relationships" />
+      </div>
+   </div>
+</div>
+
+<!-- Card 7 -->
+
+<div class=" card-7 testimonial-container">
+    <!--Left Section -->
+   <div class="left-section1">
+       <div>
+           
+           
+           <div class="subtitle">Sales Pipeline Software</div>
+           <div class="title">Track deals, close faster</div>
+               <p>Keep track of leads, streamline follow-ups, and accelerate your sales process.</p>
+               
+               <div class="card-btn">
+                   <div class="left-button"><a href="#" class="reviews-link-1">Get Started</a>
+                   </div>
+               <div class="right-button"><a href="#" class="reviews-link-2">Learn more</a>
+               </div>
+           </div>
+           </div>
+           </div>
+       
+   
+
+    <!--Right Section -->
+   <div class="right-section1">
+      <div class="rgt-imgsec">
+<img src="https://leadheed.com/wp-content/uploads/2025/04/salespipelinesoftware.webp" alt="stay-organized-and-enhance-customer-relationships" />
+      </div>
+   </div>
+</div>
+
+
+    
+
+</div>
+
+</body>
+</html>
