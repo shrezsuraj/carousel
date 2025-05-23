@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Card Carousel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      /* background: #b6adad; */
+      padding: 40px 0;
+      margin: 0;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    .carousel-wrapper {
+      /* max-width: 986px; */
+      margin: auto;
+      overflow: hidden; /* Prevent overflow */
+      padding: 0 176px;
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .carousel-nav button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background-color: #ffffff;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .carousel-nav button:hover {
+      background: #f0f0f0;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 20px;
+      scroll-behavior: smooth;
+      overflow-x: hidden; /* Hide scrollbar */
+    }
+
+    .card {
+      flex: 0 0 calc((100% - 40px) / 3); /* Show 3 cards with gap */
+      position: relative;
+      border: 1px solid #EDEEEF;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 396px;
+      /* width: 364px; */
+      background-color: transparent ;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
+      
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 36px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .folded {
+      background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/paper_bg.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+      color: #000;
+      border: none;
+      background-color: transparent;
+      
+    }
+
+    .arrow-icon {
+      display: none;
+      position: absolute;
+      bottom: 36px;
+      left: 36px;
+      width: 36px;
+      height: 36px;
+      background-color: #e4e4ff;
+      color: #2f4fff;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+    }
+
+    .card:hover .arrow-icon {
+      display: flex;
+    }
+
+    @media (max-width: 1024px) {
+      .card {
+        flex: 0 0 calc((100% - 20px) / 2); /* 2 cards */
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        flex: 0 0 100%; /* 1 card */
+      }
+
+      .carousel-nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-wrapper">
+  <div class="carousel-nav">
+    <button id="scrollLeft">
+      <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/left-arrow.png" alt="Left" style="width:20px; height:20px;">
+    </button>
+    <button id="scrollRight">
+      <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/right-arrow.png" alt="Right" style="width:20px; height:20px;">
+    </button>
+  </div>
+
+  <div class="carousel" id="cardCarousel">
+    <div class="card folded">
+      <div class="card-content">
+        <h3 class="highlight">Career Episode <br>Writing</h3>
+        <p>Professional Career Episode writing for Engineers Australia. We highlight your skills properly for guaranteed CDR approval.</p>
+      </div>
+      <div class="arrow-icon">
+        <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/content.webp');">
+      <div class="card-content">
+        <h3>Summary Statement Writing</h3>
+        <p>Get professional CDR review from EA experts. We polish your report for guaranteed skilled migration approval.</p>
+      </div>
+      <div class="arrow-icon">
+        <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/content-1.webp');">
+      <div class="card-content">
+        <h3>CDR Review</h3>
+        <p>Get professional CDR review from EA experts. We polish your report for guaranteed skilled migration approval.</p>
+      </div>
+      <div class="arrow-icon">
+        <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/paper_bg.webp');">
+      <div class="card-content">
+        <h3>Plagiarism Checking</h3>
+        <p>Ensure originality in your content with our professional plagiarism detection and editing services.</p>
+      </div>
+      <div class="arrow-icon">
+        <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const carousel = document.getElementById("cardCarousel");
+  const card = document.querySelector(".card");
+  const gap = 20; // gap between cards
+  const visibleCards = 3;
+
+  function getCardWidth() {
+    return card.offsetWidth + gap;
+  }
+
+  document.getElementById("scrollLeft").onclick = () => {
+    carousel.scrollBy({ left: -getCardWidth() * visibleCards, behavior: "smooth" });
+  };
+
+  document.getElementById("scrollRight").onclick = () => {
+    carousel.scrollBy({ left: getCardWidth() * visibleCards, behavior: "smooth" });
+  };
+</script>
+
+</body>
+</html>
