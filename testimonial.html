@@ -131,6 +131,9 @@
         .nav-btn:hover {
             background: #ddd;
         }
+        #play-pause {
+        margin: 0 5px;
+        }
         /* Responsive Styles */
     @media (max-width: 768px) {
       .testimonial-container {
@@ -263,68 +266,99 @@
     </div>
 
     <script>
-        const testimonials = [
-            {
-                text: "Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed. Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed.Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed.",
-                name: "Sherri Kertzmann",
-                image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-2.png",
-                stars: 5
-            },
-            {
-                text: "Absolutely loved the experience! The service was top-notch and exceeded my expectations.",
-                name: "John Doe",
-                image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-1.png",
-                stars: 4.5
-            },
-            {
-                text: "Great customer support and fast delivery. Highly recommended for anyone looking for quality service.",
-                name: "Jane Smith",
-                image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-3.png",
-                stars: 4
-            }
-            // TO add more testimonials
-            // {
-            //     text: "Great customer support and fast delivery. Highly recommended for anyone looking for quality service.",
-            //     name: "Jane Smith",
-            //     image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-3.png",
-            //     stars: 4
-            // }
-        ];
-
-        let currentIndex = 0;
-
-        function updateTestimonial(index) {
-            document.getElementById("testimonial-text").innerHTML = testimonials[index].text;
-            document.getElementById("profile-name").innerHTML = testimonials[index].name;
-            document.getElementById("profile-img").src = testimonials[index].image;
-
-            // Update star rating dynamically
-            const starsContainer = document.getElementById("star-rating");
-            starsContainer.innerHTML = "";
-            let fullStars = Math.floor(testimonials[index].stars);
-            let halfStar = testimonials[index].stars % 1 !== 0;
-
-            for (let i = 0; i < fullStars; i++) {
-                starsContainer.innerHTML += '★';
-            }
-            if (halfStar) {
-                starsContainer.innerHTML += '☆';
-            }
+    const testimonials = [
+        {
+            text: "Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed. Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed.Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed.",
+            name: "Sherri Kertzmann",
+            image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-2.png",
+            stars: 5
+        },
+        {
+            text: "Absolutely loved the experience! The service was top-notch and exceeded my expectations.",
+            name: "John Doe",
+            image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-1.png",
+            stars: 4.5
+        },
+        {
+            text: "Great customer support and fast delivery. Highly recommended for anyone looking for quality service.",
+            name: "Jane Smith",
+            image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-3.png",
+            stars: 4
         }
+    ];
 
-        document.getElementById("prev").addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-            updateTestimonial(currentIndex);
-        });
+    let currentIndex = 0;
+    let isPlaying = true;
+    let autoplayInterval;
 
-        document.getElementById("next").addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % testimonials.length;
-            updateTestimonial(currentIndex);
-        });
+    const playPauseBtn = document.createElement("div");
+    playPauseBtn.classList.add("nav-btn");
+    playPauseBtn.id = "play-pause";
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+        <path id="play-pause-icon" d="M8 5v14l11-7L8 5z" fill="#344054"/>
+    </svg>`;
 
-        // Initialize first testimonial
+    const navContainer = document.querySelector(".navigation");
+    navContainer.insertBefore(playPauseBtn, document.getElementById("next"));
+
+    function updateTestimonial(index) {
+        document.getElementById("testimonial-text").innerHTML = testimonials[index].text;
+        document.getElementById("profile-name").innerHTML = testimonials[index].name;
+        document.getElementById("profile-img").src = testimonials[index].image;
+
+        const starsContainer = document.getElementById("star-rating");
+        starsContainer.innerHTML = "";
+        let fullStars = Math.floor(testimonials[index].stars);
+        let halfStar = testimonials[index].stars % 1 !== 0;
+
+        for (let i = 0; i < fullStars; i++) {
+            starsContainer.innerHTML += '★';
+        }
+        if (halfStar) {
+            starsContainer.innerHTML += '☆';
+        }
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % testimonials.length;
         updateTestimonial(currentIndex);
-    </script>
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(showNext, 5000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function togglePlayPause() {
+        isPlaying = !isPlaying;
+        const icon = document.getElementById("play-pause-icon");
+        if (isPlaying) {
+            icon.setAttribute("d", "M8 5v14l11-7L8 5z"); // play icon
+            startAutoplay();
+        } else {
+            icon.setAttribute("d", "M6 19h4V5H6v14zm8-14v14h4V5h-4z"); // pause icon
+            stopAutoplay();
+        }
+    }
+
+    document.getElementById("prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial(currentIndex);
+    });
+
+    document.getElementById("next").addEventListener("click", () => {
+        showNext();
+    });
+
+    playPauseBtn.addEventListener("click", togglePlayPause);
+
+    // Initialize
+    updateTestimonial(currentIndex);
+    startAutoplay();
+</script>
 
 </body>
 </html>
