@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+      
+        .testimonial-container {
+            background: #fff;
+            border-radius: 16px;
+            padding: 60px;
+            display: flex;
+            max-width: 1100px;
+            box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+        }
+        .left-section {
+            width: 50%;
+            padding-right: 30px;
+            border-right: 1px solid #ddd;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+        }
+        .rating img {
+            width: 18px;
+            margin-right: 5px;
+        }
+        .rating-txt{
+            color:  #1A1A1A;
+            text-align: center;
+            font-family: DM Sans;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            margin-left: 20px;
+        }
+        .title {
+            color:  #1A1A1A;
+            font-family: "Plus Jakarta Sans";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            margin-top: 10px;
+           
+        }
+        .subtitle {
+            
+            color: #6124D8;
+            font-family: "Plus Jakarta Sans";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            margin-top: 2px;
+        }
+        .reviews-link {
+            
+            display: flex;
+            color: #6c3af0;
+            text-decoration: underline;
+            font-size: 16px;
+            align-items: center;  
+            margin-right:5px;        
+           
+        }
+        .testimonial-icon{
+            display: flex;
+            margin-top: 80px;
+            flex-direction: row;
+            align-items: center;
+        }
+        .right-section {
+            width: 50%;
+            padding-left: 30px;
+            padding-top: 30px;
+        }
+        .quote {
+            font-size: 40px;
+            color: #6c3af0;
+            font-style: italic;
+        }
+        .step-title {
+            font-size: 18px;
+            font-family: DM Sans;
+            color: #333;
+            line-height: 1;
+            min-height: 100px;
+            margin: -20px 0px 0px 18px ;
+            
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+        }
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .profile .name {
+            font-weight: bold;
+        }
+        .stars {
+            color: #f39c12;
+            font-size: 14px;
+        }
+        .navigation {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        .nav-btn {
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+         
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-btn:hover {
+            background: #ddd;
+        }
+        #play-pause {
+        margin: 0 5px;
+        }
+        /* Responsive Styles */
+    @media (max-width: 768px) {
+      .testimonial-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .left-section,
+      .right-section {
+        width: 100%;
+        padding: 0;
+        border: none;
+        margin-bottom: 30px;
+      }
+      .title, .subtitle{
+          font-size: 30px;
+      }
+      .quote{
+          display: flex;
+          height: 25px;
+      }
+      
+
+      .testimonial-icon {
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .step-title {
+        margin: 0;
+        margin-top: 10px;
+      }
+
+      .profile {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .navigation {
+        margin-right: 10px;
+        margin-top: 23px;
+      }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="testimonial-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <div class="rating">
+                <img src="https://leadheed.com/wp-content/uploads/2025/03/image-39.png" alt="G2 Logo">
+                
+                <svg
+                width='95'
+                height='14'
+                viewBox='0 0 95 14'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <g clip-path='url(#clip0_845_5021)'>
+                  <path
+                    d='M5.87145 4.8731L0.84375 5.32267L4.65595 8.81298L3.50556 14L7.84375 11.2336L12.1834 14L11.0323 8.81298L14.8438 5.32267L9.81677 4.8731L7.84375 5.33003e-07L5.87145 4.8731Z'
+                    fill='#FF4A2C'
+                  />
+                  <path
+                    d='M25.8715 4.8731L20.8438 5.32267L24.6559 8.81298L23.5056 14L27.8438 11.2336L32.1834 14L31.0323 8.81298L34.8438 5.32267L29.8168 4.8731L27.8438 5.33003e-07L25.8715 4.8731Z'
+                    fill='#FF4A2C'
+                  />
+                  <path
+                    d='M45.8715 4.8731L40.8438 5.32267L44.6559 8.81298L43.5056 14L47.8438 11.2336L52.1834 14L51.0323 8.81298L54.8438 5.32267L49.8168 4.8731L47.8438 5.33003e-07L45.8715 4.8731Z'
+                    fill='#FF4A2C'
+                  />
+                  <path
+                    d='M65.8715 4.8731L60.8438 5.32267L64.6559 8.81298L63.5056 14L67.8438 11.2336L72.1834 14L71.0323 8.81298L74.8438 5.32267L69.8168 4.8731L67.8438 5.33003e-07L65.8715 4.8731Z'
+                    fill='#FF4A2C'
+                  />
+                  <path
+                    d='M85.8715 4.8731L80.8438 5.32267L84.6559 8.81298L83.5056 14L87.8438 11.2336L92.1834 14L91.0323 8.81298L94.8438 5.32267L89.8168 4.8731L87.8438 5.33003e-07L85.8715 4.8731Z'
+                    fill='#D8DBE4'
+                  />
+                  <path
+                    d='M85.8714 4.8731L80.8438 5.32267L84.6559 8.81298L83.5056 14L87.8438 11.2336V-9.53674e-07L85.8714 4.8731Z'
+                    fill='#FF4A2C'
+                  />
+                </g>
+                <defs>
+                  <clipPath id='clip0_845_5021'>
+                    <rect width='94' height='14' fill='white' transform='translate(0.84375)' />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="rating-txt">4.7 rating | 100+ reviews</span>
+            </div>
+            <div class="title">Don’t take our word for it.</div>
+            <div class="subtitle">Trust our customers</div>
+            <div class="testimonial-icon">
+                <a href="#" class="reviews-link">View all G2 reviews  </a>
+                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M11.1688 6.27614V5.06903L10.3153 5.92259L4.93109 11.3068L4.69539 11.0711L10.0796 5.68689L10.9331 4.83333H9.72601H5.16883V4.5H11.5021V10.8333H11.1688V6.27614Z" fill="black" stroke="#004EEB"/>
+                    </svg>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            
+            <h4 class="step-title" id="step-title">
+                I. CDR WRITING PROCESS
+            </h4>
+            
+            <div class="profile">
+                <img id="profile-img" src="https://leadheed.com/wp-content/uploads/2025/03/Avatar-2.png" alt="User">
+                <div>
+                    <div class="name" id="profile-name">Sherri Kertzmann</div>
+                    <div class="stars" id="star-rating">★★★★★</div>                    
+                </div>
+                <div class="navigation">
+                    <div class="nav-btn" id="prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 8L8 12M8 12L12 16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg></div>
+                    <div class="nav-btn" id="next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 16L16 12M16 12L12 8M16 12H8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const steps = [
+        {
+            text: "Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed. Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed.Atque eveniet minus omnis et. At ut facilis asperiores sint alias sed.",
+            name: "Sherri Kertzmann",
+            image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-2.png",
+            stars: 5
+        },
+        {
+            text: "Absolutely loved the experience! The service was top-notch and exceeded my expectations.",
+            name: "John Doe",
+            image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-1.png",
+            stars: 4.5
+        },
+        {
+            text: "Great customer support and fast delivery. Highly recommended for anyone looking for quality service.",
+            name: "Jane Smith",
+            image: "https://leadheed.com/wp-content/uploads/2025/03/Avatar-3.png",
+            stars: 4
+        }
+    ];
+
+    let currentIndex = 0;
+    let isPlaying = true;
+    let autoplayInterval;
+
+    const playPauseBtn = document.createElement("div");
+    playPauseBtn.classList.add("nav-btn");
+    playPauseBtn.id = "play-pause";
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+        <path id="play-pause-icon" d="M8 5v14l11-7L8 5z" fill="#344054"/>
+    </svg>`;
+
+    const navContainer = document.querySelector(".navigation");
+    navContainer.insertBefore(playPauseBtn, document.getElementById("next"));
+
+    function updateTestimonial(index) {
+        document.getElementById("step-title").innerHTML = steps[index].text;
+        document.getElementById("profile-name").innerHTML = steps[index].name;
+        document.getElementById("profile-img").src = steps[index].image;
+
+        const starsContainer = document.getElementById("star-rating");
+        starsContainer.innerHTML = "";
+        let fullStars = Math.floor(steps[index].stars);
+        let halfStar = steps[index].stars % 1 !== 0;
+
+        for (let i = 0; i < fullStars; i++) {
+            starsContainer.innerHTML += '★';
+        }
+        if (halfStar) {
+            starsContainer.innerHTML += '☆';
+        }
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % steps.length;
+        updateTestimonial(currentIndex);
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(showNext, 5000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function togglePlayPause() {
+        isPlaying = !isPlaying;
+        const icon = document.getElementById("play-pause-icon");
+        if (isPlaying) {
+            icon.setAttribute("d", "M8 5v14l11-7L8 5z"); // play icon
+            startAutoplay();
+        } else {
+            icon.setAttribute("d", "M6 19h4V5H6v14zm8-14v14h4V5h-4z"); // pause icon
+            stopAutoplay();
+        }
+    }
+
+    document.getElementById("prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + steps.length) % steps.length;
+        updateTestimonial(currentIndex);
+    });
+
+    document.getElementById("next").addEventListener("click", () => {
+        showNext();
+    });
+
+    playPauseBtn.addEventListener("click", togglePlayPause);
+
+    // Initialize
+    updateTestimonial(currentIndex);
+    startAutoplay();
+</script>
+
+</body>
+</html>

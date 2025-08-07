@@ -9,30 +9,22 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      /* background: #b6adad; */
-      padding: 40px 0;
-      margin: 0;
-    }
-
     h3 {
       font-weight: 600;
       font-size: 24px;
     }
 
     .carousel-wrapper {
-      /* max-width: 986px; */
+      max-width: 986px;
       margin: auto;
-      overflow: hidden; /* Prevent overflow */
-      padding: 0 176px;
+      overflow: hidden;
     }
 
     .carousel-nav {
       display: flex;
       justify-content: flex-end;
       gap: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       padding: 0 20px;
     }
 
@@ -55,23 +47,25 @@
       display: flex;
       gap: 20px;
       scroll-behavior: smooth;
-      overflow-x: hidden; /* Hide scrollbar */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
     }
 
     .card {
-      flex: 0 0 calc((100% - 40px) / 3); /* Show 3 cards with gap */
+      flex: 0 0 calc((100% - 40px) / 3);
       position: relative;
       border: 1px solid #EDEEEF;
       border-radius: 16px;
       overflow: hidden;
-      height: 396px;
-      /* width: 364px; */
-      background-color: transparent ;
+      height: 308px;
+      background-color: transparent;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
-      
+      scroll-snap-align: start;
+      text-decoration: none;
+      color: inherit;
     }
 
     .card-content {
@@ -91,14 +85,13 @@
     }
 
     .folded {
-      background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/paper_bg.webp');
+      background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/paper-bg.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top;
       color: #000;
       border: none;
       background-color: transparent;
-      
     }
 
     .arrow-icon {
@@ -124,17 +117,38 @@
 
     @media (max-width: 1024px) {
       .card {
-        flex: 0 0 calc((100% - 20px) / 2); /* 2 cards */
+        flex: 0 0 calc((100% - 20px) / 2);
       }
     }
 
     @media (max-width: 640px) {
       .card {
-        flex: 0 0 100%; /* 1 card */
+        flex: 0 0 100%;
       }
 
       .carousel-nav {
-        justify-content: center;
+        display: none;
+      }
+
+      .carousel {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+
+      .card {
+        scroll-snap-align: start;
+      }
+    }
+
+    /* Hide horizontal scrollbar on desktop */
+    @media (min-width: 641px) {
+      .carousel {
+        scrollbar-width: none;
+      }
+
+      .carousel::-webkit-scrollbar {
+        display: none;
       }
     }
   </style>
@@ -152,7 +166,8 @@
   </div>
 
   <div class="carousel" id="cardCarousel">
-    <div class="card folded">
+
+    <a href="https://example.com/1" class="card folded">
       <div class="card-content">
         <h3 class="highlight">Career Episode <br>Writing</h3>
         <p>Professional Career Episode writing for Engineers Australia. We highlight your skills properly for guaranteed CDR approval.</p>
@@ -160,9 +175,9 @@
       <div class="arrow-icon">
         <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
       </div>
-    </div>
+    </a>
 
-    <div class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/content.webp');">
+    <a href="https://example.com/2" class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/card-semicircle-right.webp');">
       <div class="card-content">
         <h3>Summary Statement Writing</h3>
         <p>Get professional CDR review from EA experts. We polish your report for guaranteed skilled migration approval.</p>
@@ -170,9 +185,9 @@
       <div class="arrow-icon">
         <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
       </div>
-    </div>
+    </a>
 
-    <div class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/content-1.webp');">
+    <a href="https://example.com/3" class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/card-semicircle-left.webp');">
       <div class="card-content">
         <h3>CDR Review</h3>
         <p>Get professional CDR review from EA experts. We polish your report for guaranteed skilled migration approval.</p>
@@ -180,9 +195,9 @@
       <div class="arrow-icon">
         <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
       </div>
-    </div>
+    </a>
 
-    <div class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/content.webp');">
+    <a href="https://example.com/4" class="card" style="background-image: url('https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/content.webp');">
       <div class="card-content">
         <h3>Plagiarism Checking</h3>
         <p>Ensure originality in your content with our professional plagiarism detection and editing services.</p>
@@ -190,14 +205,15 @@
       <div class="arrow-icon">
         <img src="https://howtowrite.yoddhalab.com/wp-content/uploads/2025/05/arrow-up-icon.png" alt="Arrow" style="width:20px; height:20px;">
       </div>
-    </div>
+    </a>
+
   </div>
 </div>
 
 <script>
   const carousel = document.getElementById("cardCarousel");
   const card = document.querySelector(".card");
-  const gap = 20; // gap between cards
+  const gap = 20;
   const visibleCards = 3;
 
   function getCardWidth() {
